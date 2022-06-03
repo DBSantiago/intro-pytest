@@ -3,6 +3,28 @@ import pytest
 
 from app.task import Task, DueDateError
 
+# Las funciones fixture tienen como objetivo pasar valores como parámetro a nuestras pruebas
+# Y deben llamarse igual que dicho parámetro
+
+
+@pytest.fixture
+def username():
+    return "dbsantiago"
+
+
+@pytest.fixture
+def password():
+    return "12345"
+
+
+def test_username(username):
+    assert username == "dbsantiago"
+
+
+def test_username_and_password_(username, password):
+    assert username == "dbsantiago"
+    assert password == "12345"
+
 
 class TestTask:
 
