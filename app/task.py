@@ -1,6 +1,16 @@
+from datetime import datetime
+
+
+class DueDateError(Exception):
+    pass
+
+
 class Task:
 
     def __init__(self, title, description, assigned_to, due_date):
+        if due_date < datetime.now():
+            raise DueDateError
+
         self.title = title
         self.description = description
         self.assigned_to = assigned_to
