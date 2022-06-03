@@ -33,3 +33,11 @@ class TestTask:
         task = Task("Test this", "Testing new task", "dbsantiago", date)
 
         assert date > datetime.now()
+
+    @pytest.mark.skip(reason="This test is skipped because we say so.")
+    def test_skip(self):
+        pass
+
+    @pytest.mark.skipif(True, reason="This test is skipped because passed condition is True.")
+    def test_skipif(self):
+        pass
