@@ -3,7 +3,9 @@ import logging
 # LOGGING_TYPE=PRIORITY_LEVEL
 # DEBUG=10, INFO=20, WARNING=30, ERROR=40, CRITICAL=50
 logging.basicConfig(level=logging.DEBUG,
-                    format="%(levelname)s - %(asctime)s - Message: %(message)s"
+                    format="%(levelname)s - %(asctime)s - Message: %(message)s",
+                    filename="logging_task.log",
+                    filemode="a"
                     )
 
 
